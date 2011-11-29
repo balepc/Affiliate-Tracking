@@ -1,0 +1,26 @@
+<!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Day');
+        data.addColumn('number', 'Conversions');
+
+        data.addRows(<%= @conversions_by_date.size %>);
+        <% @conversions_by_date.each_with_index do |date, idx| %>
+          data.setValue(<%= idx %>, 0, '<%= Date.parse(date[0]).strftime("%d/%m") %>');
+          data.setValue(<%= idx %>, 1, <%= date[1] %>);
+        <% end %>
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, {width: 800, height: 240, title: 'Conversions by time'});
+      }
+</script>
+
+<div id="chart_div"></div>
+
+
+
+

@@ -1,0 +1,24 @@
+<h1 class="wi">Conversion details</h1>
+
+<table class="views">
+  <tbody>
+    <tr>
+      <th>Conversion #</th>
+      <th>Date</th>
+      <th>IP Address</th>
+      <th>UserAgent</th>
+      <th>Referrer</th>
+      <th>Cookies</th>
+    </tr>
+  </tbody>
+  <% @conversions.each do |conversion| %>
+      <tr>
+        <td><%= conversion.id %></td>
+        <td><%= conversion.created_at.strftime("%d/%m/%Y %H:%M") %></td>
+        <td><%= conversion.ip %></td>
+        <td><%= conversion.user_agent %></td>
+        <td><%= conversion.referrer %></td>
+        <td><%= conversion.cookies %></td>
+      </tr>
+  <% end %>
+</table>
