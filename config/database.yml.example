@@ -2,5 +2,5 @@ development:
   host: localhost
   port: 5432
   username: affiliate
-  password: dx87vv3
+  password: xxxxxxx
   database: affiliate
