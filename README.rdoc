@@ -6,7 +6,8 @@
 [DONE] Add chart for activity representation
 [DONE] Add a table with complete details of each transaction
 [DONE] Make database.yml for different environments
+[DONE] Make a rake task for database creation
 
 == ToDos
 
-* Make a rake task for database creation
+...
